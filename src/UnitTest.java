@@ -1,20 +1,16 @@
 public class UnitTest {
     public static void main(String[] args) {
 
-        ParkingSlot slot = new ParkingSlot();
+        ParkingSlot slot = new ParkingSlot(1);
 
-        // Test availability
-        System.out.println("Test Availability: " + slot.isAvailable());
+        System.out.println("Initial Available: " + slot.isAvailable());
 
-        // Test assign
         slot.assignSlot();
         System.out.println("After Assign: " + slot.isAvailable());
 
-        // Test free slot
         slot.freeSlot();
         System.out.println("After Free: " + slot.isAvailable());
 
-        // Test payment
         Payment p = new Payment();
         System.out.println("Payment Test: " + p.makePayment(100));
     }

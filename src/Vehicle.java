@@ -1,17 +1,19 @@
-class Vehicle {
+public class Vehicle {
     private int vehicleId;
     private String number;
 
-    public Vehicle(int id, String number) {
-        this.vehicleId = id;
+    public Vehicle(int vehicleId, String number) {
+        this.vehicleId = vehicleId;
         this.number = number;
     }
 
     public void enterParking() {
-        System.out.println("Vehicle Entered");
+        System.out.println("Vehicle Entered: " + number);
+        System.out.println("Vehicle ID: " + vehicleId);
+
     }
 
     public void exitParking() {
-        System.out.println("Vehicle Exited");
+        System.out.println("Vehicle Exited: " + number);
     }
 }

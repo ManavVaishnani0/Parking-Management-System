@@ -4,17 +4,18 @@ public class Main {
         System.out.println("---- System Testing ----");
 
         Vehicle v = new Vehicle(1, "GJ01AB1234");
-        ParkingSlot slot = new ParkingSlot();
+        ParkingSlot slot = new ParkingSlot(101);
         ParkingSystem system = new ParkingSystem();
 
         v.enterParking();
 
         if (system.checkAvailability(slot)) {
-            system.assignSlot(slot);
-            Ticket t = system.generateTicket();
-            System.out.println("Slot Assigned");
 
-            int fee = t.calculateFee();
+            system.assignSlot(slot);
+
+            Ticket ticket = system.generateTicket();
+
+            int fee = ticket.calculateFee();
             boolean paid = system.processPayment(fee);
 
             if (paid) {
@@ -22,6 +23,7 @@ public class Main {
                 slot.freeSlot();
                 System.out.println("Exit Successful");
             }
+
         } else {
             System.out.println("Parking Full");
         }

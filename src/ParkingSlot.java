@@ -1,6 +1,11 @@
-class ParkingSlot {
+public class ParkingSlot {
     private int slotId;
-    private boolean available = true;
+    private boolean available;
+
+    public ParkingSlot(int slotId) {
+        this.slotId = slotId;
+        this.available = true;
+    }
 
     public boolean isAvailable() {
         return available;
@@ -12,5 +17,9 @@ class ParkingSlot {
 
     public void freeSlot() {
         available = true;
+    }
+
+    public int getSlotId() {
+        return slotId;
     }
 }
